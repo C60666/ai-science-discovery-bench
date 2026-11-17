@@ -2,13 +2,19 @@
 
 **Evaluating scientific question discovery in AI research systems.**
 
-[Dataset](#dataset) · [Evaluation](#evaluation-framework) · [Leaderboard](#leaderboard) · [Getting Started](#evaluation-instructions) · [System Sources](#system-sources) · [License](#license-and-notices)
+[Paper](#paper) · [Dataset](#dataset) · [Evaluation](#evaluation-framework) · [Leaderboard](#leaderboard) · [Getting Started](#evaluation-instructions) · [System Sources](#system-sources) · [License](#license-and-notices)
 
 Large language models are enabling research agents to analyze literature, develop ideas, and plan experiments. Understanding an existing study and discovering a valuable new research question are different capabilities. Question discovery requires substantive novelty, scientific importance, and a credible route to an answer.
 
 **AI Science Discovery Bench** provides a cross-disciplinary corpus of **1,000 papers** spanning **computer science, mathematics, physics, and chemistry**, with **96 covered research directions**. It evaluates research questions through **four dimensions and 16 criteria**: novelty, feasibility, scientific value, and research risk. The reference comparison covers **20 AI research systems**, with their papers, affiliations, and official repositories listed below.
 
 This release provides a versioned paper index, a runnable model-based evaluator, the full scoring rubric, and an aggregate reference leaderboard. It helps researchers compare question-discovery methods using a consistent evaluation protocol.
+
+## Paper
+
+**Benchmark for AI Scientific Discovery Process**
+
+*arXiv link coming soon.*
 
 ## Dataset
 
@@ -94,34 +100,34 @@ The reviewer evaluates the submitted scientific content without external literat
 
 ## Leaderboard
 
-The following table summarizes historical score records from the project platform, with snapshot date **2026-10-29** and reviewer **Qwen3.6-27B**.
+The leaderboard reports scores averaged over three evaluation runs with **Qwen3.6-27B**. Each proposal is scored three times; its scores are averaged before aggregation by system. Rankings use unrounded overall scores.
 
 | Rank | System | Overall score ↑ | Novelty ↑ | Feasibility ↑ | Scientific value ↑ | Research risk ↓ |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: |
-| 1 | AI Scientist · Sakana | 7.395 | 7.248 | 7.999 | 7.248 | 3.895 |
-| 2 | ResearchAgent | 7.330 | 7.472 | 7.642 | 7.567 | 4.653 |
-| 3 | IdeaScientist | 7.260 | 7.478 | 7.535 | 7.473 | 4.826 |
-| 4 | SciAgents | 7.208 | 7.551 | 7.411 | 7.472 | 5.099 |
-| 5 | SciMON | 7.162 | 7.579 | 7.254 | 7.455 | 5.175 |
-| 6 | InfAL | 7.142 | 7.805 | 6.998 | 7.509 | 5.382 |
-| 7 | IDEAgent | 7.138 | 7.808 | 6.959 | 7.615 | 5.465 |
-| 8 | IRIS | 7.133 | 7.187 | 7.566 | 7.248 | 4.805 |
-| 9 | AI-Researcher · Stanford | 7.131 | 7.621 | 7.049 | 7.511 | 5.063 |
-| 10 | EvoScientist | 7.118 | 7.185 | 7.524 | 7.295 | 4.809 |
-| 11 | CoI-Agent | 7.106 | 7.506 | 7.191 | 7.467 | 5.215 |
-| 12 | DeepScientist | 7.099 | 7.088 | 7.584 | 7.048 | 4.398 |
-| 13 | CycleResearcher | 7.077 | 7.059 | 7.566 | 7.257 | 4.838 |
-| 14 | MOOSE | 7.064 | 7.445 | 7.186 | 7.230 | 5.056 |
-| 15 | AutoResearchClaw | 7.028 | 7.106 | 7.413 | 7.124 | 4.695 |
-| 16 | DiscoveryRSI | 6.982 | 6.756 | 7.640 | 6.930 | 4.383 |
-| 17 | Dr-Claw | 6.908 | 7.085 | 7.216 | 7.017 | 4.954 |
-| 18 | NOVA | 6.901 | 7.781 | 6.468 | 7.556 | 5.924 |
-| 19 | AI-Researcher · HKUDS | 6.741 | 7.114 | 6.737 | 7.142 | 5.299 |
-| 20 | SciPIP | 6.650 | 7.358 | 6.389 | 7.193 | 5.930 |
+| 1 | AI Scientist · Sakana | 7.384 | 7.235 | 7.991 | 7.248 | 3.919 |
+| 2 | ResearchAgent | 7.321 | 7.452 | 7.644 | 7.560 | 4.663 |
+| 3 | IdeaScientist | 7.264 | 7.481 | 7.541 | 7.480 | 4.838 |
+| 4 | SciAgents | 7.209 | 7.555 | 7.409 | 7.456 | 5.116 |
+| 5 | SciMON | 7.158 | 7.576 | 7.248 | 7.452 | 5.163 |
+| 6 | InfAL | 7.145 | 7.805 | 7.001 | 7.516 | 5.390 |
+| 7 | IRIS | 7.129 | 7.191 | 7.563 | 7.233 | 4.800 |
+| 8 | IDEAgent | 7.129 | 7.804 | 6.947 | 7.603 | 5.508 |
+| 9 | AI-Researcher · Stanford | 7.126 | 7.619 | 7.042 | 7.518 | 5.076 |
+| 10 | EvoScientist | 7.118 | 7.178 | 7.534 | 7.294 | 4.801 |
+| 11 | CoI-Agent | 7.108 | 7.500 | 7.194 | 7.473 | 5.200 |
+| 12 | DeepScientist | 7.099 | 7.083 | 7.581 | 7.058 | 4.395 |
+| 13 | CycleResearcher | 7.090 | 7.076 | 7.576 | 7.270 | 4.828 |
+| 14 | MOOSE | 7.075 | 7.449 | 7.214 | 7.242 | 5.045 |
+| 15 | AutoResearchClaw | 7.044 | 7.104 | 7.446 | 7.128 | 4.683 |
+| 16 | DiscoveryRSI | 6.984 | 6.763 | 7.643 | 6.915 | 4.366 |
+| 17 | Dr-Claw | 6.916 | 7.088 | 7.225 | 7.027 | 4.952 |
+| 18 | NOVA | 6.906 | 7.781 | 6.472 | 7.556 | 5.905 |
+| 19 | AI-Researcher · HKUDS | 6.733 | 7.121 | 6.717 | 7.130 | 5.316 |
+| 20 | SciPIP | 6.653 | 7.358 | 6.394 | 7.184 | 5.895 |
 
-![Historical score comparison of 20 AI research systems](assets/system-comparison.png)
+![Qwen three-run score comparison of 20 AI research systems](assets/system-comparison.png)
 
-The bars show dimension means; the red line shows the weighted overall score. Risk is displayed as `10 - Risk`, so higher plotted values are better. The horizontal axis starts at 3.5 to reveal mean differences; bar-length ratios should not be interpreted as capability ratios.
+The bars show three-run dimension scores: teal for novelty, blue for feasibility, gold for scientific value, and purple for `10 - Risk`. The red line and numeric labels show the overall score. Risk is displayed as `10 - Risk`, so higher plotted values are better. The horizontal axis starts at 3.5 to reveal mean differences; bar-length ratios should not be interpreted as capability ratios.
 
 These results concern research-question generation. A system's full training procedure, experimentation pipeline, retrieval resources, or iteration budget may differ from the evaluated adaptation.
 
@@ -243,3 +249,4 @@ Affiliations describe the original authorship and do not imply participation in 
 Original code, documentation, rubric, and project-authored compilation content are released under the **MIT License**. See [`LICENSE`](LICENSE) and [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 Original arXiv metadata, paper full texts, and third-party systems retain their own licenses. Citing a system's paper or repository does not relicense its implementation under MIT. The third-party notices explain the applicable boundaries.
+
